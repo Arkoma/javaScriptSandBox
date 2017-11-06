@@ -31,24 +31,35 @@
  */
 
 var landscape = function() {
-		var result = "";
-		var flat = function(size) {                        //"flat" variable sets the length of a flat 
-				for (var count = 0; count < size; count++) // section using the function "size."
-				result += "_";                             // Size here is local to the variable "flat."
-		};                                                 // The "result" variable concatenates "_" 
-		var mountain = function(size) {                    // characters to the end of the paramater "size"
-				result += "/"                              //
-				for (var count = 0; count < size; count++) //
-				result += "*";                             // Same pattern for the variablel "mountain." 
-				result += "\\";                            // It concatenates the characters "/," "*," and
-		};                                                 // "\" to make a mountain "/*\" (notice how the
-                                                           // "\" character has to be escaped because it is
-flat(3);                                                   // a special character
-mountain(4)                                                //
-flat(6)                                                    // The big point here is that the variable 
-mountain(1)                                                // "result" is global but count and size are re- 
-flat(1);                                                   // used inside each of the variables "flat," and
-return result;                                             // "mountain" though they arer given different 
-};                                                         // values within each function meaning that they
-                                                           // are local
+  var result = "";
+  var flat = function(size) {
+    for (var count = 0; count < size; count++)
+    result += "_";
+  };
+  var mountain = function(size) {
+    result += "/"
+    for (var count = 0; count < size; count++)
+    result += "*";
+    result += "\\";
+    };
+        
+flat(3);
+mountain(4)
+flat(6)
+mountain(1)
+flat(1);
+return result;
+};
+
 console.log(landscape());
+
+/***  
+ *  
+ * The "flat" variable sets the length of a flat section using the function "size." Size here is local to the
+ * variable "flat." The "result" variable concatenates "_" characters to the end of the paramater "size." Same pattern for
+ * the variablel "mountain." It concatenates the characters "/," "*," and "\" to make a mountain "/*\" (notice how the "\"
+ * character has to be escaped because it is a special character. The big point here is that the variable "result" is 
+ * global but count and size are re-used inside each of the variables "flat," and "mountain" though they arer given 
+ * different values within each function meaning that they are local. 
+ *  
+ */
